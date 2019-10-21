@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ContactsManager</string>
+    <string name="razon">Lo necesito!!</string>
+    <string name="contactos">Ver Contactos</string>
+    <string name="tvLista">Contactos:</string>
+    <string name="btSave">Exportar Lista!</string>
+    <string name="la_super_aplicacion">LA SUPER APLICACION</string>
+    <string name="interna">INTERNA</string>
+    <string name="p_blica">PÚBLICA</string>
+    <string name="privado">PRIVADO</string>
+    <string name="name">Name</string>
+    <string name="leer">LEER</string>
+    <string name="importar">IMPORTAR</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="tituloExplicacion">Warning</string>
+    <string name="mensajeExplicacion">Lo necesito</string>
+    <string name="respNo">No</string>
+    <string name="respSi">Si</string>
+    <string name="escribir">Se ha guardado correctamente</string>
+    <string name="title_activity_contactos">Contactos</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Extension del Backup</string>
+    <string name="sync_header">Historial de Exportaciones</string>
+
+    <!-- Messages Preferences -->
+    <string name="extension_title">El archivo resultante se guardara con la extensión:</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">¿Desea guardar un historial de exportaciones?</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">En cada exportacion se guardara la fecha y la localizacion del archivo.</string>
+    <string name="attachment_summary_off">Solo se guardara un historial si se encuentra activado.</string>
+
+    <string name="label_setting_hdd">¿donde guardar?</string>
+    <string name="title_activity_historial">Historial Backups</string>
+</resources>
