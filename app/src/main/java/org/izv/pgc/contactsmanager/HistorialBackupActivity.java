@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class HistorialBackupActivity extends AppCompatActivity {
-    private String guardaHistorial;
+    private String guardaHistorial, historial;
     private TextView tvHistorial;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +30,13 @@ public class HistorialBackupActivity extends AppCompatActivity {
     }
 
     private void initEvents() {
+        readHistorial();
+        tvHistorial.setText(historial);
+    }
+
+    private void readHistorial() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
+        historial = sharedPreferences.getString("historial", "");
     }
 }
