@@ -71,6 +71,9 @@ public class ContactosActivity extends AppCompatActivity {
             case "PRIVATE":
                 tipo = PRIVATE;
                 break;
+            default:
+                tipo = INTERN;
+                break;
         }
         return tipo;
     }
@@ -216,7 +219,7 @@ public class ContactosActivity extends AppCompatActivity {
 
     private String readPreferences() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ContactosActivity.this);
-        return sharedPref.getString("list_preference_1", "Intern");
+        return sharedPref.getString("list_preference_1", "INTERN");
     }
 
     private String readPreferences2() {

@@ -21,6 +21,7 @@
 
         <EditTextPreference
             app:key="extension"
+            android:defaultValue=".csv"
             app:title="@string/extension_title"
             app:useSimpleSummaryProvider="true" />
 
@@ -28,17 +29,18 @@
 
     <PreferenceCategory app:title="@string/label_setting_hdd">
         <ListPreference
-            android:defaultValue="1"
+            android:key="list_preference_1"
+            android:title="Seleccione HDD"
             android:entries="@array/reply_entries"
             android:entryValues="@array/reply_values"
-            android:key="list_preference_1"
-            android:title="Seleccione HDD" />
+            android:defaultValue="1"/>
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/sync_header">
 
         <SwitchPreferenceCompat
             app:key="sync"
+            android:defaultValue="true"
             app:title="@string/sync_title"
             app:summaryOff="@string/attachment_summary_off"
             app:summaryOn="@string/attachment_summary_on" />
