@@ -173,6 +173,7 @@ public class ContactosActivity extends AppCompatActivity {
     private void writeNotes() {
         File f = new File(getFile(type), name + readPreferences2());
         Log.v(TAG, f.getAbsolutePath());
+        String historial = f.getAbsolutePath();
         try {
             FileWriter fw = new FileWriter(f);
             fw.write(value);
@@ -180,7 +181,7 @@ public class ContactosActivity extends AppCompatActivity {
             fw.close();
             Log.v(TAG,"writeNotes");
             //tvLista.setText(R.string.escribir);
-            savePreferrences();
+            savePreferrences(historial);
             Log.v(TAG,""+value);
         } catch (IOException e) {
             tvLista.setText(e.getMessage());
@@ -223,10 +224,12 @@ public class ContactosActivity extends AppCompatActivity {
         return sharedPref.getString("extension", ".csv");
     }
 
-    private void savePreferrences(){
+    private void savePreferrences(String historial){
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(KEY_ARCHIVO, name);
+        String historialOld = sharedPref.getString("historial", "no exiten todavia backups");
+        editor.putString("historial", historialOld+"\n"+historial+"\n");
         editor.commit();
     }
 
