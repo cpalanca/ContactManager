@@ -62,8 +62,8 @@ public class SettingsActivity extends AppCompatActivity {
     private void readSettings() {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
-        name = sharedPreferences.getString("extension", "csv");
-        Log.v("xyzyx",name);
+        name = sharedPreferences.getString("extension", ".csv");
+        Log.v("xyz",name);
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {

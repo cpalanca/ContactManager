@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private void readSettings() {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
-        String name = sharedPreferences.getString("extension", "csv");
+        String name = sharedPreferences.getString("extension", ".csv");
     }
 
     @Override

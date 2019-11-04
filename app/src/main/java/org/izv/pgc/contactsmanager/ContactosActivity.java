@@ -48,7 +48,7 @@ public class ContactosActivity extends AppCompatActivity {
     private static final int PUBLIC = 1;
     private static final int PRIVATE = 2;
     private static final int ID_PERMISO_LEER_ESCRIBIR = 4;
-    private static final String TAG = "xyzyx" + MainActivity.class.getName();
+    private static final String TAG = "xyz " + MainActivity.class.getName();
     private static final String KEY_ARCHIVO = "archivo";
     private Button btEscribir; //Boton escribir
     private String extensionArchivos;
@@ -62,13 +62,13 @@ public class ContactosActivity extends AppCompatActivity {
         int tipo = NONE;
         Log.v("ITEM", item);
         switch (item) {
-            case "Intern":
+            case "INTERN":
                 tipo = INTERN;
                 break;
-            case "Public":
+            case "PUBLIC":
                 tipo = PUBLIC;
                 break;
-            case "Private":
+            case "PRIVATE":
                 tipo = PRIVATE;
                 break;
         }
@@ -100,8 +100,11 @@ public class ContactosActivity extends AppCompatActivity {
         int monthDay =calendarNow.get(Calendar.DAY_OF_MONTH);
         int month = calendarNow.get(Calendar.MONTH);
         int year = calendarNow.get(Calendar.YEAR);
-        name = "backup_"+year+month+monthDay; //.trim te quita los espacios de delante y detras
-
+        int hour = calendarNow.get(Calendar.HOUR);
+        int minute = calendarNow.get(Calendar.MINUTE);
+        int second = calendarNow.get(Calendar.SECOND);
+        name = "backup_"+year+month+monthDay+hour+minute+second; //.trim te quita los espacios de delante y detras
+        Log.v(TAG,"preferences "+readPreferences());
         type = ContactosActivity.getCheckedType(readPreferences()); //Coge el valor del radio button pulsado
         Log.v(TAG,"isValues"+type);
         //Log.v(TAG,"isValues"+name);
@@ -207,12 +210,12 @@ public class ContactosActivity extends AppCompatActivity {
     private void readSettings() {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
-        extensionArchivos = sharedPreferences.getString("extension", "csv");
+        extensionArchivos = sharedPreferences.getString("extension", ".csv");
     }
 
     private String readPreferences() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ContactosActivity.this);
-        return sharedPref.getString("list_preference_1", "INTERN");
+        return sharedPref.getString("list_preference_1", "Intern");
     }
 
     private String readPreferences2() {
